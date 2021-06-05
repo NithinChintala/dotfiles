@@ -1,0 +1,12 @@
+#!/bin/bash
+# Read each line in stdin and add "$1-# " to the front of each line
+#   The comment character is $1 or defaults to "#"
+# Used to comment in vim with:
+#   !!cmt    - single line comment
+#   !}cmt    - multiline comment
+#   !}cmt // - multiline comment in js/java/go etc.
+#   !}cmt \" - multiline comment in vimscript
+# source: https://rwx.gg/tools/editors/vi/how/magic/
+while IFS= read -r line; do 
+    echo "${1-#} $line"
+done

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# notify if git is not installed
+test -z "$(which git)" && echo "git not installed on system"
+
+# link tmux.conf
+ln -sf "$PWD/gitconfig" "$HOME/.gitconfig"

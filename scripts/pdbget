@@ -1,0 +1,3 @@
+#!/bin/bash
+code=${1,,} # use either caps or lowercase when calling script
+wget -O "$code.pdb" "https://files.rcsb.org/download/$code.pdb"

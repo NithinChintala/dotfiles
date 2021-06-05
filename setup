@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+
+ln -sf "$PWD/bashrc" "$HOME/.bashrc_common"
+ln -sf "$PWD/dircolors" "$HOME/.dircolors"
+ln -sf "$PWD/inputrc" "$HOME/.inputrc"
+
+mkdir -p "$HOME/.local/bin" || true
+ln -sf "$PWD/scripts" "$HOME/.local/bin/scripts"
+
+for i in git tmux vim; do
+  cd $i && ./setup
+  cd - > /dev/null
+done

@@ -1,0 +1,10 @@
+#!/bin/bash
+# Read each line in stdin and remove everything up until the first space
+#   Note this assumes the comment character is succeeded with a space
+# Used to uncomment in vim with:
+#   !!ucmt - single line uncomment
+#   !}ucmt - multiline uncomment
+# source: https://rwx.gg/tools/editors/vi/how/magic/
+while IFS= read -r line; do 
+    echo "${line#* }"
+done

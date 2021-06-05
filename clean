@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# remove link
+rml() {
+    test -L $1 && rm $1 && return
+    echo "$1 is not a symlilnk, not deleting"
+}
+
+rml "$HOME/.bashrc_common"
+rml "$HOME/.dircolors"
+rml "$HOME/.inputrc"
+rml "$HOME/.gitconfig"
+rml "$HOME/.vimrc"
+rml "$HOME/.tmux.conf"

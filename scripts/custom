@@ -1,0 +1,94 @@
+#!/bin/bash
+x='\e[0m'     # reset
+k='\e[90m'    # blacK
+r='\e[91m'    # Red
+g='\e[92m'    # Green
+y='\e[93m'    # Yellow
+b='\e[94m'    # Blue
+m='\e[95m'    # Magenta
+c='\e[96m'    # Cyan
+w='\e[97m'    # White
+bk='\e[1;90m' # Bold blacK
+br='\e[1;91m' # Bold Red
+bg='\e[1;92m' # Bold Green
+by='\e[1;93m' # Bold Yellow
+bb='\e[1;94m' # Bold Blue
+bm='\e[1;95m' # Bold Magenta
+bc='\e[1;96m' # Bold Cyan
+bw='\e[1;97m' # Bold White
+
+tk='#[fg=black]'         # Tmux blacK
+tr='#[fg=red]'           # Tmux Red
+tg='#[fg=green]'         # Tmux Green
+ty='#[fg=yellow]'        # Tmux Yellow
+tb='#[fg=blue]'          # Tmux Blue
+tm='#[fg=magenta]'       # Tmux Magenta
+tc='#[fg=cyan]'          # Tmux Cyan
+tw='#[fg=white]'         # Tmux White
+tbk='#[fg=black,bold]'   # Tmux Bold blacK
+tbr='#[fg=red,bold]'     # Tmux Bold Ged
+tbg='#[fg=green,bold]'   # Tmux Bold Green
+tby='#[fg=yellow,bold]'  # Tmux Bold Yellow
+tbb='#[fg=blue,bold]'    # Tmux Bold Blue
+tbm='#[fg=magenta,bold]' # Tmux Bold Magenta
+tbc='#[fg=cyan,bold]'    # Tmux Bold Cyan
+tbw='#[fg=white,bold]'   # Tmux Bold White
+
+# tmux escapes (note the escape char is "#")
+# Note all time escapes found in strftime(3) are also used
+#   #(shell-command) First line of the command's output
+#   #[attributes] Colour or attribute change
+#   #H Hostname of local host
+#   #h Hostname of local host without the domain name
+#   #F Current window flag
+#   #I Current window index
+#   #P Current pane index
+#   #S Session name
+#   #T Current window title
+#   #W Current window name
+#   ## Literal hash symbol
+case $1 in
+    dollar)
+        echo "$y\$$x " ;;
+    ps1)
+        echo "$y\u$w@$b\h$w:$x " ;;
+    status-left)
+        echo "$tbc[$tbw#S$tbc]" ;;
+    window-list)
+        echo "$tby#I$tbc:$tbw#W$tbc{$tbw#P$tbc}#F" ;;
+    status-right)
+        echo "$tbc@$tbw#H $tbw%-l$tbc:$tbw%M%P %d$tbc-$tbw%b$tbc-$tbw%y" ;;
+    colors)
+        echo "x='\e[0m'     # reset"
+        echo "k='\e[90m'    # blacK"
+        echo "r='\e[91m'    # Red"
+        echo "g='\e[92m'    # Green"
+        echo "y='\e[93m'    # Yellow"
+        echo "b='\e[94m'    # Blue"
+        echo "m='\e[95m'    # Magenta"
+        echo "c='\e[96m'    # Cyan"
+        echo "w='\e[97m'    # White"
+        echo "bk='\e[1;90m' # Bold blacK"
+        echo "br='\e[1;91m' # Bold Red"
+        echo "bg='\e[1;92m' # Bold Green"
+        echo "by='\e[1;93m' # Bold Yellow"
+        echo "bb='\e[1;94m' # Bold Blue"
+        echo "bm='\e[1;95m' # Bold Magenta"
+        echo "bc='\e[1;96m' # Bold Cyan"
+        echo "bw='\e[1;97m' # Bold White"
+        ;;
+    help | -h | --help)
+        echo "usage: custom <command> [<args>]"
+        echo
+        echo "The following commands are valid:"
+        echo "  dollar        A yellow $ for PS1"
+        echo "  ps1           A more useful PS1"
+        echo "  status-left   Tmux status-left field"
+        echo "  window-list   Tmux window-list field"
+        echo "  status-right  Tmux status-right field"
+        echo "  help          Print this help message"
+        echo "  colors        Print shell colors variables"
+        ;;
+    *)
+        echo "Unsupported custom: '$1'. See 'custom help'"
+esac

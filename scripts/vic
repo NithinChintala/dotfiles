@@ -1,0 +1,4 @@
+#!/bin/bash
+cmd="$(which $1 2> /dev/null)"
+test -z "$cmd" && echo "vic: $1: command not found" && exit 1
+exec vim "$cmd"

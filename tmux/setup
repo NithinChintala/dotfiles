@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# notify if tmux is not installed
+test -z "$(which tmux)" && echo "tmux not installed on system"
+
+# link tmux.conf
+ln -sf "$PWD/tmux.conf" "$HOME/.tmux.conf"
