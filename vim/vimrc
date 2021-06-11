@@ -28,5 +28,8 @@ let g:go_highlight_extra_types = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_highlight_variable_assignments = 1
 
+" python syntax
+let g:python_highlight_all = 1
+
 syntax enable
 autocmd BufNewFile,BufReadPost *.go set filetype=go
