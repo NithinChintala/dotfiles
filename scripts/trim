@@ -1,3 +1,0 @@
-#!/bin/bash
-# Gets rid of any leading white space on each line
-exec pie "s/^\s+//" "$@"
