@@ -4,8 +4,8 @@ test -e /etc/bashrc && source /etc/bashrc
 eval "$(dircolors $HOME/.dircolors)"
 
 # Prompt
-yellow='\[\e[33m\]'
-reset='\[\e[0m\]'
+yellow='\e[33m'
+reset='\e[0m'
 export PS1="$yellow\$$reset "
 
 # Aliases
