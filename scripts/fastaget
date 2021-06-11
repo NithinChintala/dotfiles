@@ -1,4 +1,4 @@
 #!/bin/bash
-test -z "$1" && echo "fastaget: no UniPort code given" && exit 1
+test -z "$1" && echo "fastaget: no UniProt code given" && exit 1
 code=${1^^} # use either caps or lowercase when calling script
 wget -nc -O "$code.fasta" "https://www.uniprot.org/uniprot/$code.fasta"
