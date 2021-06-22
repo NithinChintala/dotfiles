@@ -1,21 +1,21 @@
 #!/bin/bash
 x='\e[0m'     # reset
-k='\e[90m'    # blacK
-r='\e[91m'    # Red
-g='\e[92m'    # Green
-y='\e[93m'    # Yellow
-b='\e[94m'    # Blue
-m='\e[95m'    # Magenta
-c='\e[96m'    # Cyan
-w='\e[97m'    # White
-bk='\e[1;90m' # Bold blacK
-br='\e[1;91m' # Bold Red
-bg='\e[1;92m' # Bold Green
-by='\e[1;93m' # Bold Yellow
-bb='\e[1;94m' # Bold Blue
-bm='\e[1;95m' # Bold Magenta
-bc='\e[1;96m' # Bold Cyan
-bw='\e[1;97m' # Bold White
+k='\e[30m'    # blacK
+r='\e[31m'    # Red
+g='\e[32m'    # Green
+y='\e[33m'    # Yellow
+b='\e[34m'    # Blue
+m='\e[35m'    # Magenta
+c='\e[36m'    # Cyan
+w='\e[37m'    # White
+bk='\e[1;30m' # Bold blacK
+br='\e[1;31m' # Bold Red
+bg='\e[1;32m' # Bold Green
+by='\e[1;33m' # Bold Yellow
+bb='\e[1;34m' # Bold Blue
+bm='\e[1;35m' # Bold Magenta
+bc='\e[1;36m' # Bold Cyan
+bw='\e[1;37m' # Bold White
 
 tk='#[fg=black]'         # Tmux blacK
 tr='#[fg=red]'           # Tmux Red
@@ -49,9 +49,9 @@ tbw='#[fg=white,bold]'   # Tmux Bold White
 #   ## Literal hash symbol
 case $1 in
     dollar)
-        echo "$y\$$x " ;;
+        echo "$by\$$x " ;;
     ps1)
-        echo "$y\u$w@$b\h$w:$x " ;;
+        echo "$by\u$bk@$bb\h$bk:$bm\W$x " ;;
     status-left)
         echo "$tbc[$tbw#S$tbc]" ;;
     window-list)
