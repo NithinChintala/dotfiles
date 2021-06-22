@@ -51,7 +51,7 @@ case $1 in
     dollar)
         echo "$by\$$x " ;;
     ps1)
-        echo "$by\u$bk@$bb\h$bk:$bm\W$x " ;;
+        echo "$by\u$bk@$bb\h$bk:$bm\W$by\$$x " ;;
     status-left)
         echo "$tbc[$tbw#S$tbc]" ;;
     window-list)
