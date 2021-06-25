@@ -1,39 +1,37 @@
 #!/bin/bash
-x='\e[0m'     # reset
-k='\e[90m'    # blacK
-r='\e[91m'    # Red
-g='\e[92m'    # Green
-y='\e[93m'    # Yellow
-b='\e[94m'    # Blue
-m='\e[95m'    # Magenta
-c='\e[96m'    # Cyan
-w='\e[97m'    # White
-bk='\e[1;90m' # Bold blacK
-br='\e[1;91m' # Bold Red
-bg='\e[1;92m' # Bold Green
-by='\e[1;93m' # Bold Yellow
-bb='\e[1;94m' # Bold Blue
-bm='\e[1;95m' # Bold Magenta
-bc='\e[1;96m' # Bold Cyan
-bw='\e[1;97m' # Bold White
+if [[ -t 1 ]]; then
+    x='\e[0m'  # reset
+    k='\e[90m' # blacK
+    r='\e[91m' # Red
+    g='\e[92m' # Green
+    y='\e[93m' # Yellow
+    b='\e[94m' # Blue
+    m='\e[95m' # Magenta
+    c='\e[96m' # Cyan
+    w='\e[97m' # White
+fi
 
-echo -e "${c}dap${x} - ${g}delete axound current paragraph${x}"
-echo -e "${c}dip${x} - ${g}delete current paragraph${x}"
-echo -e "${c}yap${x} - ${g}yank around current paragraph${x}"
-echo -e "${c}yip${x} - ${g}yank current paragraph${x}"
-echo -e "${c}ea ${x} - ${g}append to current word${x}"
-echo -e "${c}cw ${x} - ${g}change to end of current word${x}"
-echo -e "${c}ciw${x} - ${g}change current word${x}"
-echo -e "${c}caw${x} - ${g}change around current word${x}"
-echo -e "${c}dw ${x} - ${g}delete to beginning of next word${x}"
-echo -e "${c}daf${x} - ${g}delete current function${x}"
-echo -e "${c}yaf${x} - ${g}yank current function${x}"
-echo -e "${c}dif${x} - ${g}delete current inner function${x}"
-echo -e "${c}yif${x} - ${g}yank current inner function${x}"
-echo -e "${c}dd${x}  - ${g}delete the current line${x}"
-echo -e "${c}D${x}   - ${g}delete the end of a line${x}"
-echo -e "${c}x${x}   - ${g}delete a single character${x}"
-echo -e "${c}gu${x}  - ${g}change to lowercase up to motion${x}"
-echo -e "${c}gU${x}  - ${g}change to uppercase up to motion${x}"
-echo -e "${c}f${x}   - ${g}find to specific character inline, useful for yank / delete${x}"
-echo -e "${c}yf\"${x} - ${g}yank a string incluing the quotes when cursor is on starting \"${x}"
+colorize() {
+    printf "$c%-5s$x - $g%s$x\n" "$1" "$2"
+}
+
+colorize "dap" "delete around current paragraph"
+colorize "dip" "delete current paragraph"
+colorize "yap" "yank around current paragraph"
+colorize "ip" "yank current paragraph"
+colorize "ea" "append to current word"
+colorize "cw" "change to end of current word"
+colorize "ciw" "change current word"
+colorize "caw" "change around current word"
+colorize "dw " "delete to beginning of next word"
+colorize "daf" "delete current function"
+colorize "yaf" "yank current function"
+colorize "dif" "delete current inner function"
+colorize "yif" "yank current inner function"
+colorize "dd" "delete the current line"
+colorize "D" "delete the end of a line"
+colorize "x" "delete a single character"
+colorize "gu" "change to lowercase up to motion"
+colorize "gU" "change to uppercase up to motion"
+colorize "f" "find to specific character inline, useful for yank / delete"
+colorize "yf\"" "yank a string incluing the quotes when cursor is on starting \""
