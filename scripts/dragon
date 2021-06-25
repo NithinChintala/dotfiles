@@ -57,8 +57,6 @@ mapping = {
     "%c": c,
     "%w": w,
 }
-# Get rid of starting newline, replace color escapes
-dragon = dragon[1:]
 for k, v in mapping.items():
     dragon = dragon.replace(k, v)
 print(dragon)
