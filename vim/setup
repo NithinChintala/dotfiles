@@ -5,7 +5,8 @@ test -z "$(which vim)" && echo "vim not installed on system"
 
 # download vim-plug
 if [ ! -f ~/.vim/autoload/plug.vim ]; then
-    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    echo "plug.vim not installed"
+    # curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
 # link vimrc
