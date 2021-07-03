@@ -1,21 +1,21 @@
 #!/bin/bash
-x='\e[0m'     # reset
-k='\e[30m'    # blacK
-r='\e[31m'    # Red
-g='\e[32m'    # Green
-y='\e[33m'    # Yellow
-b='\e[34m'    # Blue
-m='\e[35m'    # Magenta
-c='\e[36m'    # Cyan
-w='\e[37m'    # White
-bk='\e[1;30m' # Bold blacK
-br='\e[1;31m' # Bold Red
-bg='\e[1;32m' # Bold Green
-by='\e[1;33m' # Bold Yellow
-bb='\e[1;34m' # Bold Blue
-bm='\e[1;35m' # Bold Magenta
-bc='\e[1;36m' # Bold Cyan
-bw='\e[1;37m' # Bold White
+x='\e[0m'   # reset
+k='\e[30m'  # blacK
+r='\e[31m'  # Red
+g='\e[32m'  # Green
+y='\e[33m'  # Yellow
+b='\e[34m'  # Blue
+m='\e[35m'  # Magenta
+c='\e[36m'  # Cyan
+w='\e[37m'  # White
+bk='\e[90m' # Bold blacK
+br='\e[91m' # Bold Red
+bg='\e[92m' # Bold Green
+by='\e[93m' # Bold Yellow
+bb='\e[94m' # Bold Blue
+bm='\e[95m' # Bold Magenta
+bc='\e[96m' # Bold Cyan
+bw='\e[97m' # Bold White
 
 tk='#[fg=black]'         # Tmux blacK
 tr='#[fg=red]'           # Tmux Red
@@ -59,23 +59,23 @@ case $1 in
     status-right)
         echo "$tbc@$tbw#H $tbw%-l$tbc:$tbw%M%P %d$tbc-$tbw%b$tbc-$tbw%y" ;;
     colors)
-        echo "x='\e[0m'     # reset"
-        echo "k='\e[90m'    # blacK"
-        echo "r='\e[91m'    # Red"
-        echo "g='\e[92m'    # Green"
-        echo "y='\e[93m'    # Yellow"
-        echo "b='\e[94m'    # Blue"
-        echo "m='\e[95m'    # Magenta"
-        echo "c='\e[96m'    # Cyan"
-        echo "w='\e[97m'    # White"
-        echo "bk='\e[1;90m' # Bold blacK"
-        echo "br='\e[1;91m' # Bold Red"
-        echo "bg='\e[1;92m' # Bold Green"
-        echo "by='\e[1;93m' # Bold Yellow"
-        echo "bb='\e[1;94m' # Bold Blue"
-        echo "bm='\e[1;95m' # Bold Magenta"
-        echo "bc='\e[1;96m' # Bold Cyan"
-        echo "bw='\e[1;97m' # Bold White"
+        echo "x='\e[0m'   # reset"
+        echo "k='\e[30m'  # blacK"
+        echo "r='\e[31m'  # Red"
+        echo "g='\e[32m'  # Green"
+        echo "y='\e[33m'  # Yellow"
+        echo "b='\e[34m'  # Blue"
+        echo "m='\e[35m'  # Magenta"
+        echo "c='\e[36m'  # Cyan"
+        echo "w='\e[37m'  # White"
+        echo "bk='\e[90m' # Bold blacK"
+        echo "br='\e[91m' # Bold Red"
+        echo "bg='\e[92m' # Bold Green"
+        echo "by='\e[93m' # Bold Yellow"
+        echo "bb='\e[94m' # Bold Blue"
+        echo "bm='\e[95m' # Bold Magenta"
+        echo "bc='\e[96m' # Bold Cyan"
+        echo "bw='\e[97m' # Bold White"
         ;;
     help | -h | --help)
         echo "usage: custom <command> [<args>]"
