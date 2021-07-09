@@ -33,7 +33,8 @@ __ps1() {
     dir='~'
   fi
 
-  local br=$(git branch --show-current 2>/dev/null)
+  # local br=$(git branch --show-current 2>/dev/null)
+  local br=$(git branch | awk '/\*/ { print $2; }')
   local brc="$c"
   if [[ -n "$br" ]]; then
     if [[ "$br" == "main" || "$br" == "master" ]]; then
