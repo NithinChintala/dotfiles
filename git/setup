@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # notify if git is not installed
 test -z "$(which git)" && echo "git not installed on system"

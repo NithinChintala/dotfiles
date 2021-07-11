@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # notify if vim is not installed
 test -z "$(which vim)" && echo "vim not installed on system"

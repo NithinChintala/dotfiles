@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # notify if tmux is not installed
 test -z "$(which tmux)" && echo "tmux not installed on system"
