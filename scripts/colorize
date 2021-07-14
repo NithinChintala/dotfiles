@@ -36,15 +36,15 @@ if len(ESC) != 1:
     fatal("escape character must be exactly one character long")
 
 escapes = {
-    "x": '\x1b[0m'  # reset
-    "k": '\x1b[90m' # blacK
-    "r": "\x1b[91m" # Red
-    "g": '\x1b[92m' # Green
-    "y": '\x1b[93m' # Yellow
-    "b": '\x1b[94m' # Blue
-    "m": '\x1b[95m' # Magenta
-    "c": '\x1b[96m' # Cyan
-    "w": '\x1b[97m' # White
+    "x": '\x1b[0m',  # reset
+    "k": '\x1b[90m', # blacK
+    "r": "\x1b[91m", # Red
+    "g": '\x1b[92m', # Green
+    "y": '\x1b[93m', # Yellow
+    "b": '\x1b[94m', # Blue
+    "m": '\x1b[95m', # Magenta
+    "c": '\x1b[96m', # Cyan
+    "w": '\x1b[97m', # White
     ESC: ESC
 }
 
