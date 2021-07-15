@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
 # remove link
 rml() {
-    test -L $1 && rm $1 && return
+    [[ -L $1 ]] && rm "$1" && return
     echo "$1 is not a symlilnk, not deleting"
 }
 

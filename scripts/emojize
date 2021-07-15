@@ -1,0 +1,112 @@
+#!/bin/bash
+# mapping taken from https://emojicodes.com/
+declare -A emoji
+emoji[grin]=😁
+emoji[smiley]=😃
+emoji[smile]=😄
+emoji[laughing]=😆
+emoji[sweat_smile]=😅
+emoji[rofl]=🤣
+emoji[joy]=😂
+emoji[slightly_smiling_face]=🙂
+emoji[upside_down_face]=🙃
+emoji[wink]=😉
+emoji[blush]=😊
+emoji[innocent]=😇
+emoji[smiling_face_with_three_hearts]=🥰
+emoji[heart_eyes]=😍
+emoji[star_struck]=🤩
+emoji[kissing_heart]=😘
+emoji[kissing]=😗
+emoji[relaxed]=☺️
+emoji[kissing_closed_eyes]=😚
+emoji[kissing_smiling_eyes]=😙
+emoji[smiling_face_with_tear]=🥲
+emoji[yum]=😋
+emoji[stuck_out_tongue]=😛
+emoji[stuck_out_tongue_winking_eye]=😜
+emoji[zany_face]=🤪
+emoji[stuck_out_tongue_closed_eyes]=😝
+emoji[money_mouth_face]=🤑
+emoji[hugs]=🤗
+emoji[hand_over_mouth]=🤭
+emoji[shushing_face]=🤫
+emoji[thinking]=🤔
+emoji[zipper_mouth_face]=🤐
+emoji[raised_eyebrow]=🤨
+emoji[neutral_face]=😐
+emoji[expressionless]=😑
+emoji[no_mouth]=😶
+emoji[smirk]=😏
+emoji[unamused]=😒
+emoji[roll_eyes]=🙄
+emoji[grimacing]=😬
+emoji[lying_face]=🤥
+emoji[relieved]=😌
+emoji[pensive]=😔
+emoji[sleepy]=😪
+emoji[drooling_face]=🤤
+emoji[sleeping]=😴
+emoji[mask]=😷
+emoji[face_with_thermometer]=🤒
+emoji[face_with_head_bandage]=🤕
+emoji[nauseated_face]=🤢
+emoji[vomiting_face]=🤮
+emoji[sneezing_face]=🤧
+emoji[hot_face]=🥵
+emoji[cold_face]=🥶
+emoji[woozy_face]=🥴
+emoji[dizzy_face]=😵
+emoji[exploding_head]=🤯
+emoji[cowboy_hat_face]=🤠
+emoji[partying_face]=🥳
+emoji[disguised_face]=🥸
+emoji[sunglasses]=😎
+emoji[nerd_face]=🤓
+emoji[monocle_face]=🧐
+emoji[confused]=😕
+emoji[worried]=😟
+emoji[slightly_frowning_face]=🙁
+emoji[frowning_face]=☹️
+emoji[open_mouth]=😮
+emoji[hushed]=😯
+emoji[astonished]=😲
+emoji[flushed]=😳
+emoji[pleading_face]=🥺
+emoji[frowning]=😦
+emoji[anguished]=😧
+emoji[fearful]=😨
+emoji[cold_sweat]=😰
+emoji[disappointed_relieved]=😥
+emoji[cry]=😢
+emoji[sob]=😭
+emoji[scream]=😱
+emoji[confounded]=😖
+emoji[persevere]=😣
+emoji[disappointed]=😞
+emoji[sweat]=😓
+emoji[weary]=😩
+emoji[tired_face]=😫
+emoji[yawning_face]=🥱
+emoji[triumph]=😤
+emoji[rage]=😡
+emoji[angry]=😠
+emoji[cursing_face]=🤬
+
+toemoji() {
+  local in=/dev/stdin
+  local file="$1"
+  if [[ -n $file ]]; then
+    in="$file"
+  fi
+
+  IFS=$'\n'
+  while read -r line; do 
+    for k in ${!emoji[@]}; do 
+      line=${line//:$k:/${emoji[$k]}}
+    done
+    echo "$line"
+  done < "$in"
+}
+
+toemoji "$@"
