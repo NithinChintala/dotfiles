@@ -12,11 +12,13 @@ set autoindent
 set fileformat=unix
 set bg=dark
 
-call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
-Plug 'tomasiser/vim-code-dark'
-Plug 'sheerun/vim-polyglot'
-call plug#end()
+if filereadable(expand("~/.vim/autoload/plug.vim"))
+    call plug#begin('~/.vim/plugged')
+    Plug 'morhetz/gruvbox'
+    Plug 'tomasiser/vim-code-dark'
+    Plug 'sheerun/vim-polyglot'
+    call plug#end()
+endif
 
 " golang syntax
 let g:go_highlight_types = 1
