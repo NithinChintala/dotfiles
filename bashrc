@@ -75,4 +75,5 @@ repos() {
 
 # --------------------------- compleition ----------------------------
 complete -C repos repos
+complete -C custom custom
 

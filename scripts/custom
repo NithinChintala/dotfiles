@@ -34,6 +34,14 @@ tbm='#[fg=magenta,bold]' # Tmux Bold Magenta
 tbc='#[fg=cyan,bold]'    # Tmux Bold Cyan
 tbw='#[fg=white,bold]'   # Tmux Bold White
 
+if [[ -n $COMP_LINE ]]; then
+    cmds="dollar ps1 status-left windows-list status-right colors help"
+    for i in $cmds; do
+        [[ ${i:0:${#2}} == $2 ]] && echo "$i"
+    done
+    exit
+fi
+
 # tmux escapes (note the escape char is "#")
 # Note all time escapes found in strftime(3) are also used
 #   #(shell-command) First line of the command's output
